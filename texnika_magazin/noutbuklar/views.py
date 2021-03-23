@@ -21,7 +21,7 @@ class NoutbuklarView(APIView):
         serializer = NoutbuklarSerializer(data=article)
         if serializer.is_valid(raise_exception=True):
             article_saved = serializer.save()
-        return Response({"success": f"Article '{article_saved.brend}' created successfully"})
+        return Response({"success": f"Noutbuklar '{article_saved.brend}' created successfully"})
 
     def put(self, request, pk):
         saved_article = get_object_or_404(Noutbuklar.objects.all(), pk=pk)
@@ -29,7 +29,7 @@ class NoutbuklarView(APIView):
         serializer = NoutbuklarSerializer(instance=saved_article, data=data, partial=True)
         if serializer.is_valid(raise_exception=True):
             article_saved = serializer.save()
-        return Response({"success": f"Article '{article_saved.brend}' update successfully"})
+        return Response({"success": f"Noutbuklar '{article_saved.brend}' update successfully"})
 
 
 
@@ -49,7 +49,7 @@ class Aperatsion_tizimView(APIView):
         serializer = Aperatsion_tizimSerializer(data=article)
         if serializer.is_valid(raise_exception=True):
             article_saved = serializer.save()
-        return Response({"success": f"Article '{article_saved.type}' created successfully"})
+        return Response({"success": f"Aperatsion_tizim '{article_saved.type}' created successfully"})
 
     def put(self, request, pk):
         saved_article = get_object_or_404(Aperatsion_tizim.objects.all(), pk=pk)
@@ -57,4 +57,4 @@ class Aperatsion_tizimView(APIView):
         serializer =  Aperatsion_tizimSerializer(instance=saved_article, data=data, partial=True)
         if serializer.is_valid(raise_exception=True):
             article_saved = serializer.save()
-        return Response({"success": f"Article '{article_saved.type}' update successfully"})
+        return Response({"success": f"Aperatsion_tizim '{article_saved.type}' update successfully"})
